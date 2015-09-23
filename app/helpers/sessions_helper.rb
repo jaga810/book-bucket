@@ -28,7 +28,10 @@ module SessionsHelper
   def signed_in_bucketter
     unless signed_in?
       store_location
-      redirect_to signin_url, notice: "please sign in" unless signed_in?
+      unless signed_in?
+        flash[:success]= "please sign in" 
+        redirect_to signin_url
+      end
     end
   end
 
