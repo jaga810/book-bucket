@@ -1,3 +1,4 @@
+<div class="center hero-unit">
 <%= form_for(@book) do |f| %>
   <% @main = @book %>
   <%= render 'shared/error_messages'%>
@@ -19,6 +20,7 @@
     <%= f.text_field :version %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Register!",class: "btn btn-default" %>
   </div>
 <% end %>
+</div>
